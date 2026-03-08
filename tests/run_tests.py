@@ -10,11 +10,11 @@ import multiprocessing
 
 TEST_DIR = os.path.dirname(os.path.realpath(__file__))
 SCRIPTS_DIR = os.path.realpath(os.path.join(TEST_DIR, '..', 'scripts'))
-
+os.system('cls')
 def decompyle_one(test_name, pyc_file, outdir, tokenized_expect):
     out_base = os.path.join(outdir, os.path.basename(pyc_file))
     proc = subprocess.run(
-            [os.path.join(os.getcwd(), 'pycdc'), pyc_file, '-o', out_base + '.src.py'],
+            ["python",os.path.join(os.getcwd(), 'pycdc.py'), pyc_file, '-o', out_base + '.src.py'],
             stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True,
             encoding='utf-8', errors='replace')
     pycdc_output = proc.stdout
