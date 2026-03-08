@@ -101,11 +101,7 @@ def main():
     # [cite: 754-757]
     dispname = os.path.basename(infile)
     pyc_output.write("# Source Generated with Decompyle++\n")
-    
-    # [cite: 756] 
-    # Note: strict adherence to provided source check
-    if mod.minor_ver < 12:
-        return 1
+
         
     unicode_str = " Unicode" if (mod.major_ver < 3 and mod.is_unicode()) else ""
     pyc_output.write(f"# File: {dispname} (Python {mod.major_ver}.{mod.minor_ver}{unicode_str})\n\n")
