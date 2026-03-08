@@ -1,0 +1,6 @@
+# Ignore Python cache directories
+__pycache__/
+*.pyc
+
+# Ignore your test output folder
+tests-out/
